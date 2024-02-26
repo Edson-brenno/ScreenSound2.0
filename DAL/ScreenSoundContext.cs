@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using dotenv.net;
+using ScreenSound.Model;
 
 namespace ScreenSound.DAL{
     internal class ScreenSoundContext: DbContext{
 
+        public DbSet<BandsModel> TbBands {get;set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
 
             try{

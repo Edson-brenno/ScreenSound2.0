@@ -13,6 +13,6 @@ namespace ScreenSound.Model{
         public string? Name {get;set;}
 
         [Column("dt_registration")]
-        public DateTime dtRegistration = DateTime.Now;
+        public DateTime DtRegistration {get;set;} = DateTime.Now;
     }
 }
