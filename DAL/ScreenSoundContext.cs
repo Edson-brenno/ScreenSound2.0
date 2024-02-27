@@ -6,6 +6,8 @@ namespace ScreenSound.DAL{
     internal class ScreenSoundContext: DbContext{
 
         public DbSet<BandsModel> TbBands {get;set;}
+
+        public DbSet<AlbumsModel> TbAlbums {get;set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
 
             try{
