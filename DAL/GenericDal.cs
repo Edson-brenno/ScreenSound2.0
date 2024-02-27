@@ -30,5 +30,10 @@ namespace ScreenSound.DAL{
             this.context.SaveChanges();
         }
 
+        //Method Get by the condition
+        public T? GetBy(Func<T,bool> condition){
+            return context.Set<T>().FirstOrDefault(condition);
+        }
+
     }
 }
