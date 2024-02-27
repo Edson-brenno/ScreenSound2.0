@@ -9,5 +9,12 @@ namespace ScreenSound.DAL{
             this.context = screenSoundContext;
         }
 
+        //Method to insert the data
+        public void Insert(T tObject){
+            
+            this.context.Set<T>().Add(tObject);
+            this.context.SaveChanges();
+        }
+
     }
 }
