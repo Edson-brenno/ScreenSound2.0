@@ -1,3 +1,5 @@
+using System.IO.Compression;
+
 namespace ScreenSound.DAL{
 
     //Class where You'll find the comons methods between dal classes
@@ -13,6 +15,18 @@ namespace ScreenSound.DAL{
         public void Insert(T tObject){
             
             this.context.Set<T>().Add(tObject);
+            this.context.SaveChanges();
+        }
+
+        //Method to Update the data
+        public void Update(T tObject){
+            this.context.Set<T>().Update(tObject);
+            this.context.SaveChanges();
+        }
+
+        //Method to delete the data
+        public void Delete(T tObject){
+            this.context.Set<T>().Remove(tObject);
             this.context.SaveChanges();
         }
 
