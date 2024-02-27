@@ -14,5 +14,11 @@ namespace ScreenSound.Model{
 
         [Column("dt_registration")]
         public DateTime DtRegistration {get;set;} = DateTime.UtcNow;
+
+        // Setting One band to many albums
+        public ICollection<AlbumsModel>? Albums {get;} = new List<AlbumsModel>();
+
+        // Setting One band to many songs
+        public ICollection<SongsModel>? Musics {get;} = new List<SongsModel>();
     }
 }

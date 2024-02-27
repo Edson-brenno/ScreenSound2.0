@@ -19,12 +19,12 @@ namespace ScreenSound.Model{
         [Column("band_id")]
         [ForeignKey("BandId")]
         public int BandId {get;set;}
-        public BandsModel? Band {get;set;}
+        public BandsModel? Band {get;set;} = null!;
 
         //Album Id
         [Column("album_id")]
         [ForeignKey("AlbumId")]
         public int AlbumId {get;set;}
-        public AlbumsModel? Album {get;set;}
+        public AlbumsModel? Album {get;set;} = null!;
     }
 }

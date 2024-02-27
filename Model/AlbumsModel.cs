@@ -17,6 +17,6 @@ namespace ScreenSound.Model{
         [ForeignKey("BandId")]
         public int? BandId {get;set;}
 
-        public BandsModel? Band {get;set;}
+        public BandsModel? Band {get;set;} = null!;
     }
 }
