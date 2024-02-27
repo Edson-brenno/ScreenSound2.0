@@ -44,7 +44,7 @@ namespace ScreenSound2._0.Migrations
 
                     b.HasIndex("BandId");
 
-                    b.ToTable("tb_albums");
+                    b.ToTable("tb_albums", (string)null);
                 });
 
             modelBuilder.Entity("ScreenSound.Model.BandsModel", b =>
@@ -67,7 +67,7 @@ namespace ScreenSound2._0.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("tb_bands");
+                    b.ToTable("tb_bands", (string)null);
                 });
 
             modelBuilder.Entity("ScreenSound.Model.SongsModel", b =>
@@ -99,7 +99,7 @@ namespace ScreenSound2._0.Migrations
 
                     b.HasIndex("BandId");
 
-                    b.ToTable("tb_songs");
+                    b.ToTable("tb_songs", (string)null);
                 });
 
             modelBuilder.Entity("ScreenSound.Model.AlbumsModel", b =>
