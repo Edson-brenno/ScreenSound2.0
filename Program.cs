@@ -8,11 +8,16 @@ namespace ScreenSound{
         public static void Main(String[] args){
             ScreenSoundContext context = new ScreenSoundContext();
 
+            //testing insert, update,delete and getby
+            
             BandsDal bandsDal = new BandsDal(context);
+            AlbumsDal albumsDal = new AlbumsDal(context);
+            
+            BandsModel? band = bandsDal.GetBy(a => a.Id == 1);
+            AlbumsModel album = new AlbumsModel(){Id=4, Name="Black in Black 2", Band=band};
 
-            BandsModel band = new BandsModel(){Name="AC-DC"};
-
-            bandsDal.Insert(band);
+            //bandsDal.Insert(band);
+            albumsDal.Update(album);
         } 
     }
 }
