@@ -8,6 +8,8 @@ namespace ScreenSound.DAL{
         public DbSet<BandsModel> TbBands {get;set;}
 
         public DbSet<AlbumsModel> TbAlbums {get;set;}
+
+        public DbSet<SongsModel> TbSongs {get;set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
 
             try{
