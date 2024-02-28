@@ -4,7 +4,7 @@ using ScreenSound.MenuExceptions;
 namespace ScreenSound.View{
     internal class MenuView: GenericMenuView,IMenu{ //class where contains all the main menu options
         
-        public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦",1,6){
+        public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦",1,7){
         }
 
         void IMenu.ShowTheChoosedMenuOption()
@@ -56,6 +56,7 @@ namespace ScreenSound.View{
             System.Console.WriteLine("[4] See the Bands");
             System.Console.WriteLine("[5] See the Albums");
             System.Console.WriteLine("[6] See the Songs");
+            System.Console.WriteLine("[7] Exit");
         }
 
         public void Main(){
