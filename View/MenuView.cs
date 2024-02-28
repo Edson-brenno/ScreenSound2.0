@@ -12,14 +12,12 @@ namespace ScreenSound.View{
             System.Console.WriteLine("[6] See the Songs");
         }
 
-
-
         public void Main(){
-            this.ShowMenusName();
+            base.ShowMenusName();
 
             this.ShowAllTheMenuOptions();
 
-            this.ShowMenusLineSeparation();
+            base.ShowMenusLineSeparation();
         }
     }    
 }
