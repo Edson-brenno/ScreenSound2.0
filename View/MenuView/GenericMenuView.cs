@@ -33,31 +33,35 @@ namespace ScreenSound.View{
             System.Console.WriteLine(this.LinesSeparation);
         }
 
-        protected virtual void ValidateMenuOption(){
-            
+        protected virtual bool IsMenuOptionValid(string? menuOption){
+
+            if(String.IsNullOrEmpty(menuOption) || String.IsNullOrWhiteSpace(menuOption)){
+                throw new NotNullMenuOptionException();
+            }
+            else if (!Char.IsDigit(menuOption[0])){
+                throw new NotADigitMenuException();
+            }
+            else if ((Char.IsDigit(menuOption[0]) && int.Parse(menuOption) < this.firstMenuOptionNumber) ||
+            (Char.IsDigit(menuOption[0]) && int.Parse(menuOption) > this.lastMenuOptionNumber)){
+
+                throw new NotAValidMenuOptionException();
+            }
+            else{
+                return true;
+            }
         }
 
-        protected virtual void AskMenusOption(int firstMenuOptionNumber, int lastMenuOptionNumber){ // Ask for the menus option
+        protected virtual void AskMenusOption(){ // Ask for the menus option
             
             while(true){
 
                 try{
 
                     System.Console.Write("Please, write the selected option: ");
-                    this.GenericMenusOption = System.Console.ReadLine()!;
+                    string? menuOption = System.Console.ReadLine()!;
 
-                    if(String.IsNullOrEmpty(this.GenericMenusOption) || String.IsNullOrWhiteSpace(this.GenericMenusOption)){
-                        throw new NotNullMenuOptionException();
-                    }
-                    else if (!Char.IsDigit(this.GenericMenusOption[0])){
-                        throw new NotADigitMenuException();
-                    }
-                    else if ((Char.IsDigit(this.GenericMenusOption[0]) && int.Parse(this.GenericMenusOption) < firstMenuOptionNumber) ||
-                    (Char.IsDigit(this.GenericMenusOption[0]) && int.Parse(this.GenericMenusOption) > lastMenuOptionNumber)){
-
-                        throw new NotAValidMenuOptionException();
-                    }
-                    else{
+                    if(this.IsMenuOptionValid(menuOption)){
+                        this.GenericMenusOption = menuOption;
                         break;
                     }
 

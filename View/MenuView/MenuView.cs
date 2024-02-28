@@ -19,7 +19,7 @@ namespace ScreenSound.View{
 
             base.ShowMenusLineSeparation();
 
-            base.AskMenusOption(1,6);
+            base.AskMenusOption();
         }
     }    
 }
