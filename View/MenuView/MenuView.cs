@@ -1,4 +1,5 @@
 using ScreenSound.Interfaces.MenuInterface;
+using ScreenSound.MenuExceptions;
 
 namespace ScreenSound.View{
     internal class MenuView: GenericMenuView,IMenu{ //class where contains all the main menu options
@@ -13,7 +14,38 @@ namespace ScreenSound.View{
 
         
         protected void ShowTheChoosedMenuOption(){
+            try{
 
+                switch(int.Parse(base.GenericMenusOption ?? throw new NotNullMenuOptionException())){
+                    case 1:
+                        System.Console.WriteLine("new band");
+                        break;
+                    case 2:
+                        System.Console.WriteLine("new album");
+                        break;
+                    case 3:
+                        System.Console.WriteLine("new song");
+                        break;
+                    case 4:
+                        System.Console.WriteLine("see band");
+                        break;
+                    case 5:
+                        System.Console.WriteLine("see album");
+                        break;
+                    case 6:
+                        System.Console.WriteLine("see song");
+                        break;
+                    case 7:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        throw new NotAValidMenuOptionException();
+                }
+
+            }catch(Exception ex){
+                System.Console.WriteLine(ex.Message);
+            }
+            
         }
 
         
@@ -35,6 +67,8 @@ namespace ScreenSound.View{
             base.ShowMenusLineSeparation();
 
             base.AskMenusOption();
+
+            this.ShowTheChoosedMenuOption();
         }
 
     }    
