@@ -6,9 +6,13 @@ namespace ScreenSound.View{
         protected string? GenericMenusName; // Menus Name
         protected string? LinesSeparation => "===================================================";
         protected string? GenericMenusOption;
+        protected int firstMenuOptionNumber;
+        protected int lastMenuOptionNumber;
 
-        public GenericMenuView(string menusName){
+        public GenericMenuView(string menusName, int firstMenuOptionIdentifier, int lastMenuOptionIdentifier){
             this.GenericMenusName = menusName;
+            this.firstMenuOptionNumber = firstMenuOptionIdentifier;
+            this.lastMenuOptionNumber = lastMenuOptionIdentifier;
         }
 
         protected virtual void ClearTheCurrentLine(){
@@ -27,6 +31,10 @@ namespace ScreenSound.View{
 
         protected virtual void ShowMenusLineSeparation(){ //Show the separation
             System.Console.WriteLine(this.LinesSeparation);
+        }
+
+        protected virtual void ValidateMenuOption(){
+            
         }
 
         protected virtual void AskMenusOption(int firstMenuOptionNumber, int lastMenuOptionNumber){ // Ask for the menus option

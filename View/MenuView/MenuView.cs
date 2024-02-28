@@ -1,7 +1,7 @@
 namespace ScreenSound.View{
     internal class MenuView:GenericMenuView{ //class where contains all the main menu options
         
-        public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦"){
+        public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦",1,6){
         }
         private void ShowAllTheMenuOptions(){
             System.Console.WriteLine("[1] Add a new Band");
@@ -18,7 +18,7 @@ namespace ScreenSound.View{
             this.ShowAllTheMenuOptions();
 
             base.ShowMenusLineSeparation();
-            
+
             base.AskMenusOption(1,6);
         }
     }    
