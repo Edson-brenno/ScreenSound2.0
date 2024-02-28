@@ -7,13 +7,13 @@ namespace ScreenSound.View{
         public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦",1,7){
         }
 
-        void IMenu.ShowTheChoosedMenuOption()
+        void IMenu.ShowTheChoosedMenuOption() // implement the Imenu
         {
             throw new NotImplementedException();
         }
 
         
-        protected void ShowTheChoosedMenuOption(){
+        protected void ShowTheChoosedMenuOption(){ // Will show the choosed menu
             try{
 
                 switch(int.Parse(base.GenericMenusOption ?? throw new NotNullMenuOptionException())){
