@@ -76,6 +76,5 @@ namespace ScreenSound.View{
             
         }
 
-
     }
 }

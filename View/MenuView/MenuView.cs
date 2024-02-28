@@ -1,8 +1,22 @@
+using ScreenSound.Interfaces.MenuInterface;
+
 namespace ScreenSound.View{
-    internal class MenuView:GenericMenuView{ //class where contains all the main menu options
+    internal class MenuView: GenericMenuView,IMenu{ //class where contains all the main menu options
         
         public MenuView():base(@"𝕊𝕔𝕣𝕖𝕖𝕟𝕊𝕠𝕦𝕟𝕕 𝕄𝕖𝕟𝕦",1,6){
         }
+
+        void IMenu.ShowTheChoosedMenuOption()
+        {
+            throw new NotImplementedException();
+        }
+
+        
+        protected void ShowTheChoosedMenuOption(){
+
+        }
+
+        
         private void ShowAllTheMenuOptions(){
             System.Console.WriteLine("[1] Add a new Band");
             System.Console.WriteLine("[2] Add a new Album");
@@ -13,6 +27,7 @@ namespace ScreenSound.View{
         }
 
         public void Main(){
+
             base.ShowMenusName();
 
             this.ShowAllTheMenuOptions();
@@ -21,5 +36,6 @@ namespace ScreenSound.View{
 
             base.AskMenusOption();
         }
+
     }    
 }
