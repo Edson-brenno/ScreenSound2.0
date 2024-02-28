@@ -33,7 +33,7 @@ namespace ScreenSound.View{
             System.Console.WriteLine(this.LinesSeparation);
         }
 
-        protected virtual bool IsMenuOptionValid(string? menuOption){
+        protected virtual bool IsMenuOptionValid(string? menuOption){ //Validate the menu option
 
             if(String.IsNullOrEmpty(menuOption) || String.IsNullOrWhiteSpace(menuOption)){
                 throw new NotNullMenuOptionException();
