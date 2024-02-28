@@ -1,3 +1,5 @@
+using ScreenSound.MenuExceptions;
+
 namespace ScreenSound.View{
     internal class GenericMenuView{
 
@@ -7,6 +9,15 @@ namespace ScreenSound.View{
 
         public GenericMenuView(string menusName){
             this.GenericMenusName = menusName;
+        }
+
+        protected virtual void ClearTheCurrentLine(){
+
+            System.Console.SetCursorPosition(0,Console.CursorTop - 1);
+
+            System.Console.WriteLine(new string(' ', Console.WindowWidth));
+
+            System.Console.SetCursorPosition(0,Console.CursorTop - 1);
         }
         protected virtual void ShowMenusName(){ // Show the menus name
             System.Console.WriteLine(this.LinesSeparation);
@@ -27,28 +38,32 @@ namespace ScreenSound.View{
                     System.Console.Write("Please, write the selected option: ");
                     this.GenericMenusOption = System.Console.ReadLine()!;
 
-                    if(String.IsNullOrEmpty(this.GenericMenusName) || String.IsNullOrWhiteSpace(this.GenericMenusName)){
-                        System.Console.WriteLine("Canno be empity");
+                    if(String.IsNullOrEmpty(this.GenericMenusOption) || String.IsNullOrWhiteSpace(this.GenericMenusOption)){
+                        throw new NotNullMenuOptionException();
                     }
                     else if (!Char.IsDigit(this.GenericMenusOption[0])){
-                        System.Console.WriteLine("Cannot be a letter");
+                        throw new NotADigitMenuException();
                     }
                     else if ((Char.IsDigit(this.GenericMenusOption[0]) && int.Parse(this.GenericMenusOption) < firstMenuOptionNumber) ||
                     (Char.IsDigit(this.GenericMenusOption[0]) && int.Parse(this.GenericMenusOption) > lastMenuOptionNumber)){
 
-                        System.Console.WriteLine("invalid option");
+                        throw new NotAValidMenuOptionException();
                     }
                     else{
                         break;
                     }
 
                 }catch(Exception ex){
-                    System.Console.WriteLine(ex.Message);
+                    System.Console.WriteLine(ex.InnerException);
+
+                    this.ClearTheCurrentLine();
+                    
                 }
 
             }
             
         }
+
 
     }
 }

@@ -1,5 +1,5 @@
 namespace ScreenSound.MenuExceptions{
-    internal class NotADigitMenuException{
+    internal class NotADigitMenuException:Exception{
         public NotADigitMenuException(){
             GenericMenuException.ClearTheCurrentLine();
 

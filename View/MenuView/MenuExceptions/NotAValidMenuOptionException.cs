@@ -1,5 +1,5 @@
 namespace ScreenSound.MenuExceptions{
-    internal class NotAValidMenuOptionException{
+    internal class NotAValidMenuOptionException:Exception{
         public NotAValidMenuOptionException(){
             GenericMenuException.ClearTheCurrentLine();
 
