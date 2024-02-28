@@ -17,7 +17,7 @@ namespace ScreenSound.View{
 
             this.ShowAllTheMenuOptions();
 
-            base.ShowMenusLineSeparation();
+            base.AskMenusOption(1,6);
         }
     }    
 }
