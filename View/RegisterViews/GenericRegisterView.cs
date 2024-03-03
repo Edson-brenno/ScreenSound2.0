@@ -32,7 +32,7 @@ namespace ScreenSound.View.RegisterViews{
             System.Console.SetCursorPosition(0,Console.CursorTop - 1);
         }
 
-        protected virtual bool isNewRegisterValid(string? newRegister){ 
+        protected virtual bool IsNewRegisterValid(string? newRegister){ // Validade the new register 
             if(String.IsNullOrEmpty(newRegister) || String.IsNullOrWhiteSpace(newRegister)){
                 throw new NotNullRegisterException();
             }
@@ -48,7 +48,7 @@ namespace ScreenSound.View.RegisterViews{
                     System.Console.Write(question);
                     string? answer = System.Console.ReadLine();
                     
-                    if(this.isNewRegisterValid(answer)){
+                    if(this.IsNewRegisterValid(answer)){
                         this.typedRegister = answer;
                         break;
                     }
