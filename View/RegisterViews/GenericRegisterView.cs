@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Runtime.InteropServices;
+using ScreenSound.RegisterExceptions;
 
 namespace ScreenSound.View.RegisterViews{
     internal class GenericRegisterView{
@@ -33,7 +34,7 @@ namespace ScreenSound.View.RegisterViews{
 
         protected virtual bool isNewRegisterValid(string? newRegister){ 
             if(String.IsNullOrEmpty(newRegister) || String.IsNullOrWhiteSpace(newRegister)){
-                throw new Exception();
+                throw new NotNullRegisterException();
             }
             else{
                 return true;
@@ -53,6 +54,7 @@ namespace ScreenSound.View.RegisterViews{
                     }
                 }catch(Exception ex){
                     System.Console.WriteLine(ex.InnerException);
+                    this.ClearTheCurrentLine();
                 } 
             }
             
