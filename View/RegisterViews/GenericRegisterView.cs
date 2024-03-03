@@ -9,12 +9,21 @@ namespace ScreenSound.View.RegisterViews{
             this.registerName = titleMenuName;
         }
 
-        protected void ShowRegistersName(){
+        protected void ShowRegistersName(){ // Print Apresentation of Register Name
             System.Console.WriteLine(this.LinesSeparation);
 
             System.Console.WriteLine(this.registerName);
 
             System.Console.WriteLine(this.LinesSeparation);
+        }
+
+        protected virtual void ClearTheCurrentLine(){ // Clear the current line
+
+            System.Console.SetCursorPosition(0,Console.CursorTop - 1);
+
+            System.Console.WriteLine(new string(' ', Console.WindowWidth));
+
+            System.Console.SetCursorPosition(0,Console.CursorTop - 1);
         }
         
     }
