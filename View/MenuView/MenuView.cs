@@ -1,5 +1,6 @@
 using ScreenSound.Interfaces.MenuInterface;
 using ScreenSound.MenuExceptions;
+using ScreenSound.View.RegisterViews;
 
 namespace ScreenSound.View{
     internal class MenuView: GenericMenuView,IMenu{ //class where contains all the main menu options
@@ -18,7 +19,9 @@ namespace ScreenSound.View{
 
                 switch(int.Parse(base.GenericMenusOption ?? throw new NotNullMenuOptionException())){
                     case 1:
-                        System.Console.WriteLine("new band");
+                        RegisterBandView registerBandView = new RegisterBandView();
+
+                        registerBandView.Main();
                         break;
                     case 2:
                         System.Console.WriteLine("new album");
