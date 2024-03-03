@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace ScreenSound.View.RegisterViews{
     internal class GenericRegisterView{
         protected string? LinesSeparation => "==================================================="; // Separation
@@ -5,6 +7,14 @@ namespace ScreenSound.View.RegisterViews{
 
         public GenericRegisterView(string titleMenuName){
             this.registerName = titleMenuName;
+        }
+
+        protected void ShowRegistersName(){
+            System.Console.WriteLine(this.LinesSeparation);
+
+            System.Console.WriteLine(this.registerName);
+
+            System.Console.WriteLine(this.LinesSeparation);
         }
         
     }
