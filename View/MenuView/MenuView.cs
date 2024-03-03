@@ -26,10 +26,12 @@ namespace ScreenSound.View{
                     case 2:
                         RegisterAlbumView registerAlbumView = new RegisterAlbumView();
                         registerAlbumView.Main();
-                        
+
                         break;
                     case 3:
-                        System.Console.WriteLine("new song");
+                        RegisterSongView registerSongView = new RegisterSongView();
+                        registerSongView.Main();
+                        
                         break;
                     case 4:
                         System.Console.WriteLine("see band");
