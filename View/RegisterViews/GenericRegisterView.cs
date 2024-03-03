@@ -14,7 +14,7 @@ namespace ScreenSound.View.RegisterViews{
 
         protected void ShowRegistersName(){ // Print Apresentation of Register Name
             System.Console.Clear();
-            
+
             System.Console.WriteLine(this.LinesSeparation);
 
             System.Console.WriteLine(this.registerName);
@@ -31,14 +31,26 @@ namespace ScreenSound.View.RegisterViews{
             System.Console.SetCursorPosition(0,Console.CursorTop - 1);
         }
 
+        protected virtual bool isNewRegisterValid(string? newRegister){ 
+            if(String.IsNullOrEmpty(newRegister) || String.IsNullOrWhiteSpace(newRegister)){
+                throw new Exception();
+            }
+            else{
+                return true;
+            }
+        }
+
         protected virtual void AskNewRegister(string? question){ //Ask for a new register
 
             while(true){
                 try{
                     System.Console.Write(question);
                     string? answer = System.Console.ReadLine();
-                    System.Console.WriteLine(question);
-                    break;
+                    
+                    if(this.isNewRegisterValid(answer)){
+                        this.typedRegister = answer;
+                        break;
+                    }
                 }catch(Exception ex){
                     System.Console.WriteLine(ex.InnerException);
                 } 
