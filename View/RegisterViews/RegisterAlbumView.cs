@@ -8,7 +8,7 @@ namespace ScreenSound.View.RegisterViews{
         public void Main(){
             base.ShowRegistersName();
 
-            base.AskNewRegister("Please, type the new album");
+            base.AskNewRegister("Please, type the new album: ");
         }
 
     }
