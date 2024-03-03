@@ -1,15 +1,17 @@
+using ScreenSound.Exceptions;
+
 namespace ScreenSound.MenuExceptions{
 
     internal class NotNullMenuOptionException:Exception{
         public NotNullMenuOptionException(){
 
-            GenericMenuException.ClearTheCurrentLine();
+            GenericException.ClearTheCurrentLine();
 
             System.Console.WriteLine("The menu option cannot be null");
 
-            GenericMenuException.PutToSleep();
+            GenericException.PutToSleep();
 
-            GenericMenuException.ClearTheCurrentLine();
+            GenericException.ClearTheCurrentLine();
         }
     }
 }

@@ -1,13 +1,15 @@
+using ScreenSound.Exceptions;
+
 namespace ScreenSound.MenuExceptions{
     internal class NotADigitMenuException:Exception{
         public NotADigitMenuException(){
-            GenericMenuException.ClearTheCurrentLine();
+            GenericException.ClearTheCurrentLine();
 
             System.Console.WriteLine("The menu option cannot be letter or special characters");
 
-            GenericMenuException.PutToSleep();
+            GenericException.PutToSleep();
 
-            GenericMenuException.ClearTheCurrentLine();
+            GenericException.ClearTheCurrentLine();
         }
     }
 }

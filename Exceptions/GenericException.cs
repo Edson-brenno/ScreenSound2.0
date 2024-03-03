@@ -1,7 +1,5 @@
-namespace ScreenSound.MenuExceptions{
-
-    // Class with methods and attributes that will be used to every MenuException
-    internal class GenericMenuException{
+namespace ScreenSound.Exceptions{
+    internal class GenericException{
         public static void ClearTheCurrentLine(){ // Clear the current line
 
             System.Console.SetCursorPosition(0,Console.CursorTop - 1);
