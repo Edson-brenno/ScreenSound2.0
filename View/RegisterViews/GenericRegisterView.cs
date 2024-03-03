@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace ScreenSound.View.RegisterViews{
@@ -5,11 +6,15 @@ namespace ScreenSound.View.RegisterViews{
         protected string? LinesSeparation => "==================================================="; // Separation
         protected string? registerName; // have the name of the register
 
+        protected string? typedRegister; // Have the what the user wants to add
+
         public GenericRegisterView(string titleMenuName){
             this.registerName = titleMenuName;
         }
 
         protected void ShowRegistersName(){ // Print Apresentation of Register Name
+            System.Console.Clear();
+            
             System.Console.WriteLine(this.LinesSeparation);
 
             System.Console.WriteLine(this.registerName);
@@ -24,6 +29,21 @@ namespace ScreenSound.View.RegisterViews{
             System.Console.WriteLine(new string(' ', Console.WindowWidth));
 
             System.Console.SetCursorPosition(0,Console.CursorTop - 1);
+        }
+
+        protected virtual void AskNewRegister(string? question){ //Ask for a new register
+
+            while(true){
+                try{
+                    System.Console.Write(question);
+                    string? answer = System.Console.ReadLine();
+                    System.Console.WriteLine(question);
+                    break;
+                }catch(Exception ex){
+                    System.Console.WriteLine(ex.InnerException);
+                } 
+            }
+            
         }
         
     }
