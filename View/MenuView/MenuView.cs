@@ -24,7 +24,9 @@ namespace ScreenSound.View{
                         registerBandView.Main();
                         break;
                     case 2:
-                        System.Console.WriteLine("new album");
+                        RegisterAlbumView registerAlbumView = new RegisterAlbumView();
+                        registerAlbumView.Main();
+                        
                         break;
                     case 3:
                         System.Console.WriteLine("new song");
